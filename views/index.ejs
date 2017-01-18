@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Message Board</title>
+    <style media="screen">
+    .wrapper {
+      width: 960px; margin: 0 auto;
+    }
+      #submitBtn  {
+        padding: 20px; background-color: #ff00c7; border-radius: 4px; color: white; width: 400px; font-size: 15px; border: white; cursor: pointer; align-self: center; display: inline-block; font-weight: 100;
+      }
+      #resetBtn {
+        padding: 20px; background-color: #ff0000; border-radius: 4px; color: white; width: 400px; font-size: 15px; border: white; cursor: pointer; align-self: center; display: inline-block; font-weight: 100;
+      }
+      #comment {
+          width: 400px;
+      }
+      input, textarea {
+        padding: 20px;
+        width: 970px;
+        margin-bottom: 20px;
+        font-size: 18px;
+      }
+      form, h1{
+          text-align: center;
+      }
+      h1 {
+          color: #ff00c7;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Message Board</h1>
+
+    <form class="" action="/message" method="post">
+      <input type="text" name="name" value="" placeholder="Name"><br>
+      <textarea rows="4" cols="50" name="text" value="" placeholder="Message"></textarea> <br>
+      <input type="submit" name="" value="Add New Message" id="submitBtn">
+    </form>
+
+
+    <% for ( x of post) { %>
+        <p>Message: <%= x.text %></p>
+        <p>Name: <%= x.name %></p><hr>
+
+        <form class="" action="/message" method="post">
+            <input type="text" id="comment"name="name" value="" placeholder="Comment Here..."><br>
+            <!-- <textarea rows="4" cols="50" name="text" value="" placeholder="Message"></textarea> <br> -->
+            <input type="submit" id="comment" name="" value="Add Comment" id="submitBtn">
+        </form>
+    <% } %>
+
+
+
+  </body>
+</html>
